@@ -1,29 +1,10 @@
-version: 0.2
-
-phases:
-  install:
-    runtime-versions:
-      python: 3.8  # Specify the Python version
-    commands:
-      - echo Installing dependencies...
-      - pip install -r requirements.txt
-  pre_build:
-    commands:
-      - echo start prebuild and end it    
-  build:
-    commands:
-      - echo Running unit tests with pytest...
-      - pytest --junitxml=reports/results.xml --tb=short  # Generate test report in JUnit format
-  post_build:
-    commands:
-      - echo Build completed successfully.
-
-artifacts:
-  files:
-    - "**/*"
-  base-directory: .  # Specify where artifacts are stored
-reports:
-  pytest_reports:
-    files:
-      - "reports/results.xml"
-    discard-paths: yes
+# django-celery-beat==2.6.0
+# django-redis
+# gunicorn==21.2.0
+# pdfkit==1.0.0
+# pip-chill==1.0.3
+# psycopg[binary]==3.2.3
+# python-decouple==3.8
+# whitenoise==6.7.0
+pytest
+pytest-cov
