@@ -13,7 +13,8 @@ phases:
   build:
     commands:
       - echo Running unit tests with pytest...
-      - pytest --junitxml=reports/results.xml --tb=short  # Generate test report in JUnit format
+      - mkdir -p reports
+      - pytest --junitxml=reports/results.xml --tb=short # Generate test report in JUnit format
   post_build:
     commands:
       - echo Build completed successfully.
